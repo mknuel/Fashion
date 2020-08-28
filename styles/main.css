@@ -1,26 +1,7 @@
-/*
-0 - 600px - phone
-600 -900px - tablet portrait
-900 - 1200px - tablet landscape
-1200 - 1800 - normal dextop
-1800 - ... -big screens
-
-
-@mixin respond-phone{
-    @media (max-width: 600px) {@content};
+@font-face {
+    font-family: "Latoweb";
+    src: local(Latoweb), url(../lato/fonts/Lato-Regular.woff)format("WOFF");
 }
-
-
-
-$breakpoint args
--phone
--tab-port
--tab-land
--big-desktop
-
-order: base + typo > 
-
-*/
 .grid {
   display: flex;
   flex-flow: row wrap;
@@ -1104,7 +1085,7 @@ html {
       font-size: 50%; } }
 
 body {
-  font-family: Latoweb;
+  font-family: "Latoweb";
   font-weight: 300;
   font-size: 1.6rem;
   line-height: 1.7;
