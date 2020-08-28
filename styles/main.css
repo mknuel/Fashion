@@ -1,6 +1,6 @@
 @font-face {
     font-family: "Latoweb";
-    src: local(Latoweb), url(../lato/Lato-Regular.woff)format("WOFF");
+    src: local(Latoweb), url(../lato/fonts/Lato-Medium.woff)format("WOFF");
 }
 .grid {
   display: flex;
