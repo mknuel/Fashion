@@ -1,0 +1,211 @@
+.section-about {
+    background-color: $colorlightgrey;
+    padding: 25rem 0;
+    margin-top: -20rem;
+    @include respond(tab-port) {
+        margin-bottom: -7.5rem;
+    }
+    @include respond(phone) {
+        margin-bottom: -15rem;
+    }
+}
+
+.composition {
+    position: relative;
+    height: auto;
+    width: auto;
+    display: block;
+    &__photo {
+        width: 55%;
+        box-shadow: 0 1.5rem 4rem rgba($colorblack, .4);
+        position: absolute;
+        z-index: 1;
+        transition: all .4s;
+        backface-visibility: hidden;
+        outline-offset: 2rem;
+        @include respond(tab-port) {
+            position: relative;
+            width: 32%;
+            box-shadow: 0 1.5rem 3rem rgba($colorblack, .2);
+            justify-self: flex-start;
+        }
+        &--p1 {
+            top: -2rem;
+            left: 0;
+            @include respond(tab-port) {
+                top: 0;
+                transform: scale(1.2);
+            }
+        }
+        &--p2 {
+            top: 2rem;
+            right: 0;
+            @include respond(tab-port) {
+                transform: scale(1.3);
+                top: -1rem;
+                z-index: 100;
+            }
+        }
+        &--p3 {
+            top: 10rem;
+            left: 20%;
+            @include respond(tab-port) {
+                left: 0;
+                top: 1rem;
+                transform: scale(1.1);
+            }
+        }
+        &:hover {
+            transform: scale(1.05) translateY(-.5rem);
+            box-shadow: 0 2.5rem 4rem rgba($colorblack, .6);
+            z-index: 10;
+            outline: 1.5rem solid $colormediumpink;
+        }
+    }
+    &:hover &__photo:not(:hover) {
+        transform: scale(.95);
+        box-shadow: 0 1.5rem 4rem rgba($colorblack, .4);
+        z-index: 1;
+    }
+}
+
+.section-features {
+    width: 100%;
+    padding: 18rem 9rem;
+    background-image: linear-gradient(to left bottom, rgba(255, 168, 212, 0.3), rgba(249, 69, 141, 0.6)), url(../Pictures/bg1.jpeg);
+    background-size: cover;
+    transform: skewY(-7deg);
+    z-index: 16;
+    margin-top: -25rem;
+    @include respond(tab-port) {
+        padding: 4rem;
+        margin: 2rem 0 -2rem 0;
+        background-image: linear-gradient(to left bottom, rgba(255, 168, 212, 0.3), rgba(249, 69, 141, 0.6)), url(../Pictures/bg1-mobile-1x.jpg);
+        background-size: cover;
+        background-position: bottom;
+        @media (min-resolution: 192dpi) and (min-width: 37.5rem), (-webkit-min-device-pixel-ratio: 2), (min-width: 125rem) {
+            background-image: linear-gradient(to left bottom, rgba(255, 168, 212, 0.3), rgba(249, 69, 141, 0.6)), url(../Pictures/bg1-mobile.jpg);
+        }
+    }
+    &__contain {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        align-content: center;
+        @include respond(tab-port) {
+            flex-flow: column wrap;
+            padding: 4rem;
+        }
+    }
+    &>* {
+        transform: skewY(7deg);
+    }
+}
+
+.feature-box {
+    background-color: rgba(255, 255, 255, .8);
+    font-size: 1.5rem;
+    padding: 2.5rem;
+    text-align: center;
+    border-radius: .3rem;
+    flex-basis: 22%;
+    box-shadow: 0 1.5rem 4rem rgba($colorblack, .15);
+    transition: transform .3s;
+    cursor: pointer;
+    @include respond(tab-port) {
+        flex-basis: 100% !important;
+        flex-grow: 1;
+        padding: 5rem;
+        align-items: center;
+        margin-bottom: 7%;
+    }
+    &__icon {
+        font-size: 6rem;
+        margin-bottom: .5rem;
+        background-image: linear-gradient(to right, $colorlightpink, $colordarkpink);
+        display: inline-block;
+        color: transparent;
+        -webkit-background-clip: text;
+        @include respond(tab-port) {
+            margin-bottom: 0;
+        }
+    }
+    &:hover {
+        transform: translateY(-1.5rem) scale(1.03);
+    }
+}
+
+.section-styles {
+    background-color: $colorlightgrey;
+    padding: 15rem 0 15rem 0;
+    margin: -20rem 0 0 0 0;
+    height: auto;
+    @include respond(tab-port) {
+        padding: 10rem 0;
+        margin: 0 0 -10rem 0;
+    }
+    &__contain {
+        display: flex;
+        padding: 0 10rem;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        @include respond(tab-land) {
+            padding: 0 7rem;
+        }
+        @include respond(tab-port) {
+            flex-flow: column;
+            text-align: center;
+            justify-content: center;
+            align-content: space-around;
+        }
+        @include respond(phone) {
+            padding: 0 4rem;
+        }
+    }
+}
+
+.section-stories {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    padding-bottom: 5rem;
+    @include respond(tab-port) {
+        padding: 10rem 0;
+    }
+}
+
+.section-order {
+    padding: 15rem 0;
+    background-image: linear-gradient(to right bottom, $colorlightpink, $colordarkpink);
+    @include respond(tab-port) {
+        padding: 10rem 0;
+    }
+}
+
+.order {
+    background-size: cover;
+    background-image: linear-gradient(105deg, rgba($colorwhite, .9)0%, rgba($colorwhite, .9)50%, rgba(transparent, 0)50%), url(../Pictures/pexels-photo-1488463-1x.jpg);
+    border-radius: 3px;
+    box-shadow: 0 1.5rem 4rem rgba($colorblack, .2);
+    @media (min-resolution: 192dpi) and (min-width: 37.5rem), (-webkit-min-device-pixel-ratio: 2), (min-width: 125rem) {
+        background-size: cover;
+        background-image: linear-gradient(105deg, rgba($colorwhite, .9)0%, rgba($colorwhite, .9)50%, rgba(transparent, 0)50%), url(../Pictures/pexels-photo-1488463.jpeg);
+    }
+    @include respond(tab-land) {
+        width: 100%;
+        background-image: linear-gradient(105deg, rgba($colorwhite, .9)0%, rgba($colorwhite, .9)65%, transparent 65%), url(../Pictures/pexels-photo-1488463.jpeg);
+    }
+    @include respond(tab-port) {
+        background-image: linear-gradient(to right, rgba($colorwhite, .9)0%, rgba($colorwhite, .9)100%), url(../Pictures/pexels-photo-1488463.jpeg);
+    }
+    &__form {
+        width: 50%;
+        padding: 6rem;
+        @include respond(tab-land) {
+            width: 65%;
+        }
+        @include respond(tab-port) {
+            width: 100%;
+        }
+    }
+}

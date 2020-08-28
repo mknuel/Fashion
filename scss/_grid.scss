@@ -1,0 +1,40 @@
+.grid {
+    display: flex;
+    flex-flow: row wrap;
+    padding: 3rem;
+    width: 100%;
+    height: auto;
+    box-sizing: border-box;
+    position: relative;
+    justify-content: center;
+    @include respond(tab-port) {
+        justify-content: center;
+        flex-flow: column wrap !important;
+    }
+    &-text {
+        flex-basis: 40%;
+        height: auto;
+        position: relative;
+        height: auto;
+        a {
+            margin-bottom: 5%;
+        }
+        @include respond(tab-port) {
+            flex-basis: 100% !important;
+            padding: 1rem 4rem;
+        }
+    }
+    &-img {
+        margin-right: 5%;
+        position: relative;
+        height: 50rem;
+        flex-basis: 40%;
+        @include respond(tab-port) {
+            flex-basis: 100% !important;
+            flex-grow: 1.5;
+            justify-self: center;
+            padding: 2rem 4rem 2rem 6rem;
+            margin-right: 0 !important;
+        }
+    }
+}

@@ -1,0 +1,100 @@
+/*
+    
+light  #ffa8d3
+medium  #fb5ea3
+deep  #f9458e
+*/
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 62.5%;
+    @include respond(big-desktop) {
+        font-size: 75%;
+    }
+    @include respond(tab-land) {
+        font-size: 56.25%; //1rem = 8px  
+    }
+    @include respond(tab-port) {
+        font-size: 50%; //1rem = 9px 
+    }
+    @include respond(phone) {
+        font-size: 50%; //1rem = 9px 
+    }
+}
+
+@font-face {
+    font-family: "Latoweb";
+    src: local(Latoweb), url(../lato/fonts/Lato-Regular.woff)format("WOFF");
+}
+
+body {
+    font-family: Latoweb;
+    font-weight: 300;
+    font-size: 1.6rem;
+    line-height: 1.7;
+    color: #777;
+    padding: 1.5%;
+    max-width: 100vw;
+    //overflow-x: hidden;
+    box-sizing: border-box;
+    @include respond(tab-port) {
+        padding: 0 !important;
+    }
+}
+
+.header {
+    width: 100%;
+    height: 85vh;
+    background-image: linear-gradient(to left bottom, rgba(255, 168, 212, 0.3), rgba(249, 69, 141, 0.4)), url(../Pictures/cover-1x.jpg);
+    position: relative;
+    background-size: cover;
+    background-position: 0 25%;
+    background-repeat: no-repeat;
+    @supports(clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) or (-moz-clip-path: polygon(0 0)) {
+        height: 95vh;
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% 80vh, 0 100%);
+        -moz-clip-path: polygon(0 0, 100% 0, 100% 80vh, 0 100%);
+        clip-path: polygon(0 0, 100% 0, 100% 80vh, 0 100%);
+    }
+    @media (min-resolution: 192dpi) and (max-width: 37.5rem),
+    (-webkit-min-device-pixel-ratio: 2),
+    (min-width: 125rem) {
+        background-image: linear-gradient(to left bottom, rgba(255, 168, 212, 0.3), rgba(249, 69, 141, 0.4)), url(../Pictures/cover.jpeg);
+        background-size: cover;
+    }
+    @include respond(phone) {
+        @supports(clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) or (-moz-clip-path: polygon(0 0)) {
+            height: 95vh;
+            -webkit-clip-path: polygon(0 0, 100% 0, 100% 87vh, 0 100%);
+            -moz-clip-path: polygon(0 0, 100% 0, 100% 87vh, 0 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 87vh, 0 100%);
+        }
+    }
+}
+
+.header__logo-box {
+    position: absolute;
+    top: 0rem;
+    left: -2rem;
+    width: auto;
+}
+
+.header__logo {
+    height: 17rem;
+    width: 17rem;
+}
+
+.header__text-box {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    text-align: center;
+    transform: translate(-50%, -50%);
+}
