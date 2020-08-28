@@ -1,6 +1,6 @@
 @font-face {
     font-family: "Latoweb";
-    src: local(Latoweb), url(../lato/fonts/Lato-Regular.woff)format("WOFF");
+    src: local(Latoweb), url(../lato/Lato-Regular.woff)format("WOFF");
 }
 .grid {
   display: flex;
@@ -1088,7 +1088,7 @@ body {
   font-family: "Latoweb";
   font-weight: 300;
   font-size: 1.6rem;
-  line-height: 1.7;
+  line-height: 1.7rem;
   color: #777;
   padding: 1.5%;
   max-width: 100vw;
